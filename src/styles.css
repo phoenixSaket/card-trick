@@ -1,1 +1,51 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: #00F0B5;
+}
+
+.inherit-dimensions {
+    width: 100%;
+    height: 100%;
+}
+
+.invalid {
+    color: red;
+}
+
+.d-grid {
+    display: grid;
+}
+
+.margin-td-20 {
+    padding: 20px;
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+mat-sidenav,
+mat-drawer {
+    width: 300px !important;
+    background-color: #D3FCD5 !important;
+}
+
+.mat-drawer-inner-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 10px;
+}

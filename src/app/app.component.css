@@ -1,0 +1,21 @@
+.grid-columns-card {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 150px));
+    gap: 5px;
+}
+
+mat-drawer-container {
+    background-color: unset !important;
+    background: transparent;
+}
+
+.card-img {
+    width: 100px;
+    height: 135px;
+    margin: 5px;
+}
+
+.title {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}

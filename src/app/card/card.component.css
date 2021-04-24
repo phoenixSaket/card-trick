@@ -1,0 +1,26 @@
+.card {
+    height: 200px;
+    width: 150px;
+    margin: 5px;
+    padding: 0;
+    background-color: #6DECAF;
+}
+
+.card-img {
+    width: 150px;
+    height: 200px;
+}
+
+.card-img:hover {
+    animation: dimOpacity 0.5s;
+    opacity: 0.5;
+}
+
+@keyframes dimOpacity {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
