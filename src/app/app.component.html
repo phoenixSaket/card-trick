@@ -77,6 +77,10 @@
                 </div>
             </div>
 
+            <!-- <div class="animated-cards w-100" *ngIf="this.cardsArranged">
+                <app-arranged-cards [cards]="this.arrangedCards" [skip]="this.numberOfSkipCards"></app-arranged-cards>
+            </div> -->
+
         </mat-drawer-container>
         <div class="button-container">
             <button mat-raised-button *ngIf="this.showArrangeButton" (click)="arrangeCards()">Arrange Cards</button>
