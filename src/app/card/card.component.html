@@ -1,5 +1,5 @@
-<div class=" card d-flex justify-content-center align-items-center inherit-dimensions">
-    <span class="material-icons circle shadow pointer" (click)="showSlideout($event)" *ngIf="this.card.value.length === 0">
+<div class=" card d-flex justify-content-center align-items-center inherit-dimensions pointer" (click)="showSlideout($event)">
+    <span class="material-icons circle shadow pointer" *ngIf="this.card.value.length === 0">
         add_circle
     </span>
     <div *ngIf="this.card.value.length !== 0">
