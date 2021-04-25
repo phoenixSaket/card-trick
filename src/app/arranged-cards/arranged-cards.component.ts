@@ -13,6 +13,7 @@ export class ArrangedCardsComponent implements OnInit {
 
     check: number = 0;
     innerCheck = 0;
+    isSkipped:boolean = false; 
 
     constructor() { }
 
@@ -41,13 +42,11 @@ export class ArrangedCardsComponent implements OnInit {
                             this.cards[j] = this.cards[j + 1];
                         }
                     }
-                    console.log("Card Popped : ", this.cards[this.cards.length - 1])
                     this.cards.pop();
                     this.check--;
                     this.innerCheck = 0;
-                    setTimeout(() => {
-                        this.arrangeCards(that);
-                    }, 1000);
+                    this.isSkipped = false;
+                    break;   
                 }
 
 
@@ -69,6 +68,8 @@ export class ArrangedCardsComponent implements OnInit {
                     if (this.innerCheck == this.skip) {
                         this.check = 1;
                     }
+                    this.isSkipped = true;
+                    break;
                 }
 
 
@@ -76,7 +77,7 @@ export class ArrangedCardsComponent implements OnInit {
             if (this.cards.length > 0) {
                 this.arrangeCards(that);
             }
-        }, 1000);
+        }, 3000);
     }
 
 }

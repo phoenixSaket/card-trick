@@ -3,3 +3,9 @@
     height: 200px;
     margin: 5px;
 }
+
+.title {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
