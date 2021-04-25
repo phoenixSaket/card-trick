@@ -19,11 +19,17 @@ export class ArrangedCardsComponent implements OnInit {
 
     ngOnInit(): void {
         this.arrangeCards(this);
+        // this.cards = [];
+        // this.cards.push({value: "assets/cards/2S.png"});
+        // this.cards.push({value: "assets/cards/4S.png"});
+        // this.cards.push({value: "assets/cards/AS.png"});
+        // this.cards.push({value: "assets/cards/5S.png"});
+        // this.cards.push({value: "assets/cards/3S.png"});
     }
 
     arrangeCards(that) {
-        console.table("Cards", this.cards);
-        console.table("Display", this.display);
+        console.table(this.cards);
+        console.table(this.display);
 
         setTimeout(() => {
             for (let i: number = 0; i < this.cards.length; i++) {
@@ -67,12 +73,10 @@ export class ArrangedCardsComponent implements OnInit {
 
                     if (this.innerCheck == this.skip) {
                         this.check = 1;
+                        this.isSkipped = true;
+                        break;
                     }
-                    this.isSkipped = true;
-                    break;
                 }
-
-
             }
             if (this.cards.length > 0) {
                 this.arrangeCards(that);

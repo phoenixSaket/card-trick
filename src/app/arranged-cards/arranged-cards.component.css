@@ -1,11 +1,12 @@
 .card-img {
-    width: 150px;
-    height: 200px;
+    width: 100px;
+    height: 135px;
     margin: 5px;
 }
 
 .title {
     text-transform: uppercase;
     letter-spacing: 2px;
+    font-size: 10px;
     font-weight: 700;
 }

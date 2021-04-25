@@ -1,6 +1,6 @@
 <div class="d-flex flex-column justify-content-between">
     <span class="w-100 d-flex justify-content-center title">Displayed Cards</span>
-    <div class="d-flex justify-content-center align-items-center w-100">
+    <div class="d-flex justify-content-center align-items-center">
         <div class="cards" *ngFor="let card of this.display">
             <img [src]="card" alt="card" class="card-img">
         </div>
@@ -10,7 +10,7 @@
     <div class="d-flex justify-content-center align-items-center w-100">
         <div class="cards d-flex flex-column justify-content-center align-items-center" *ngFor="let card of this.cards; let i = index">
             <img [src]="card.value" alt="card" class="card-img">
-            <span class="title" *ngIf="this.isSkipped && i == this.cards.length-this.skip">
+            <span class="title" *ngIf="this.isSkipped && i >= this.cards.length-this.skip">
                 Skipped Card
             </span>
         </div>

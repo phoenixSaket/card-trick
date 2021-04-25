@@ -24,7 +24,8 @@ export class AppComponent {
   showArrangeButton: boolean = false;
   setNumber: number = 0;
   cardsArranged: boolean = false;
-  arrangedCards: any; 
+  arrangedCards: any;
+  showArrangementButton: boolean = true;
 
 
   constructor(public service: CardValueService) { }
@@ -139,24 +140,37 @@ export class AppComponent {
     let totalCards = this.numberOfCards;
     let cards = this.service.getCard();
     let sequence = [];
-    for(let i = 0; i< totalCards ; i++) {
+    for (let i = 0; i < totalCards; i++) {
       sequence.push("");
     }
     let blank = 0;
     let k = 0;
 
     for (let i = 0; i < totalCards; i++) {
-      
-      if(sequence[i] == "") {
+
+      if (sequence[i] == "") {
         blank++;
       }
 
-      if(blank == skip + 1) {
-        sequence[i]=cards[k];
-        k++;
-        blank = 0;
+      if (blank == skip) {
+        if (i + 1 == totalCards) {
+          if (sequence[0] == "") {
+            sequence[0] = cards[k];
+            ++k;
+            blank = 0;
+            this.cardsArranged = true;
+          }
+        } else {
+          if (sequence[i + 1] == "") {
+            sequence[i + 1] = cards[k];
+            ++k;
+            blank = 0;
+            this.cardsArranged = true;
+
+          }
+        }
       }
-      
+
       if (i == totalCards - 1) {
         i = -1;
       }
@@ -166,8 +180,12 @@ export class AppComponent {
       }
     }
 
-    this.cardsArranged = true;
     this.arrangedCards = sequence;
+
   }
 
+  showArrangement() {
+    this.showArrangeButton = !this.showArrangeButton;
+    this.arrangeCards();
+  }
 }
