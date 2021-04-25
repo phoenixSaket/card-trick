@@ -38,7 +38,7 @@ export class AppComponent {
 
   changeNumberOfCards(cards: any) {
     this.numberOfCards = cards.target.value;
-    if (this.numberOfCards < 1) {
+    if (this.numberOfCards < 1 || this.numberOfCards > 51) {
       this.invalidNumberOfCards = true;
     } else {
       this.invalidNumberOfCards = false;
