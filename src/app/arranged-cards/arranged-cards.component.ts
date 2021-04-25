@@ -28,8 +28,6 @@ export class ArrangedCardsComponent implements OnInit {
     }
 
     arrangeCards(that) {
-        console.table(this.cards);
-        console.table(this.display);
 
         setTimeout(() => {
             for (let i: number = 0; i < this.cards.length; i++) {
