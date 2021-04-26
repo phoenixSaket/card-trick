@@ -1,16 +1,16 @@
 <div class="d-flex justify-content-center align-items-center flex-wrap w-100">
     <span class="w-100 d-flex justify-content-center title">Displayed Cards</span>
-    <div class="d-flex justify-content-center align-items-center flex-wrap w-100">
+    <div class="all-cards d-flex justify-content-center align-items-center flex-wrap w-100">
         <div class="cards" *ngFor="let card of this.display">
             <img [src]="card" alt="card" class="card-img">
         </div>
     </div>
 
     <span class="w-100 d-flex justify-content-center title">Cards Stack</span>
-    <div class="d-flex justify-content-center align-items-center flex-wrap w-100">
-        <div class="cards d-flex flex-column justify-content-center align-items-center flex-wrap" *ngFor="let card of this.cards; let i = index">
+    <div class="all-cards d-flex justify-content-center align-items-center flex-wrap w-100">
+        <div class="cards d-flex flex-column justify-content-center align-items-center flex-wrap" *ngFor="let card of this.cards; let i = index" [ngClass]="this.isSkipped && i >= this.cards.length-this.skip%this.cards.length ? 'bring-to-light' : '' ">
             <img [src]="card.value" alt="card" class="card-img">
-            <span class="title" *ngIf="this.isSkipped && i >= this.cards.length-this.skip">
+            <span class="title" *ngIf="this.isSkipped && i >= this.cards.length-this.skip%this.cards.length">
                 Skipped Card
             </span>
         </div>
